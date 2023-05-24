@@ -15,8 +15,8 @@ body {
     Nav bar start 
 ---------------------*/
 .header {
-    width: 100%;
-    height: 100%;
+    width: 1440px;
+    height: 94px;
     background: #562EFF;
 }
 
@@ -53,12 +53,19 @@ nav li img {
 /*---------------------------------------------------------
         main section top player and top blog
 ------------------------------------------------------- */
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .container {
-    width: 63%;
-    height: 100%;
+    width: 870px;
+    height: 630px;
     background: #FFFFFF;
     border-radius: 5px;
-    margin-left: 285px;
+    margin-top: 30px;
 
 }
 
@@ -66,16 +73,16 @@ nav li img {
     color: #562EFF;
     font-weight: 500;
     font-size: 24px;
+    margin-top: 30px;
     margin-left: 33px;
-    padding-top: 33px;
 }
 
 .players {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    margin-left: 35px;
-    margin-top: 30px;
+    margin-left: 33px;
+    margin-top: 31px;
 }
 
 .player img {
@@ -85,6 +92,7 @@ nav li img {
 
 .player {
     display: flex;
+    align-items: center;
     gap: 15px;
     font-weight: 300;
     font-size: 12px;
@@ -105,15 +113,15 @@ hr {
     color: #562EFF;
     font-weight: 500;
     font-size: 24px;
-    margin-left: 30px;
-    padding-top: 25px;
+    margin-left: 33px;
+    margin-top: 33px;
 }
 
 .blogs {
     display: grid;
-    row-gap: 20px;
+    row-gap: 26px;
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 33px;
+    margin-top: 31px;
 }
 
 .blog {
@@ -123,13 +131,14 @@ hr {
 }
 
 .thumbnail img {
-    width: 190px;
-    height: 127px;
+    width: 200px;
+    height: 100px;
 }
 
 .blog-title {
     font-weight: 500;
     font-size: 20px;
+    margin: 0px;
 }
 
 .blog-author {
@@ -149,11 +158,10 @@ hr {
         Lated Course
 --------------------------------- */
 .latest-course {
-    width: 63%;
-    height: 100%;
+    width: 870px;
+    height: 362px;
     background: #FFFFFF;
     border-radius: 5px;
-    margin-left: 285px;
     margin-top: 22px;
 
 }
@@ -163,7 +171,7 @@ hr {
     font-weight: 500;
     font-size: 24px;
     margin-left: 30px;
-    padding-top: 25px;
+    margin-top: 30px;
 }
 
 .courses {
@@ -197,15 +205,26 @@ hr {
     color: #ED6B4F;
 }
 
+.course-title {
+    margin-top: 5px;
+}
+
+.course-author {
+    margin-top: -6px;
+}
+
 .course-duration {
-    margin-left: 20px;
     background: #FFE4E8;
     border-radius: 14.6913px;
+    font-weight: 600;
+    font-size: 14.6913px;
     color: #FF4A60;
+    padding: 7px;
+    margin-left: 10px;
 }
 
 span {
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 
@@ -216,40 +235,44 @@ span {
 /* mobile device */
 
 @media only screen and (max-width: 688px) {
-
-    nav {
-        flex-direction: column;
-        margin: 0px 18px 0px 0px;
+    .header{
+        width: 100%;
     }
-
-    .container,
-    .latest-course {
+    nav{
+        flex-direction: column;
+    }
+    nav li{
+        justify-content: center;
+    }
+    .container, hr, .latest-course{
         width: 100%;
         height: 100%;
-        margin-left: 0;
     }
-
-    .players,
-    .blogs {
+    .players, .blogs, .courses{
         grid-template-columns: repeat(1, 1fr);
     }
-
-    .courses {
-        grid-template-columns: repeat(1, 1fr);
-        row-gap: 20px;
-
+    .blog, .player{
+        flex-direction: column;
     }
+
 
 }
 
 /* galaxy fold */
 @media only screen and (min-width: 280px) and (max-width:653px) {
-
+    .header{
+        width: 100%;
+    }
+    nav{
+        flex-direction: column;
+    }
+    nav ul{
+        margin-top: -2px;
+    }
     .container,
     .latest-course {
         width: 100%;
         height: 100%;
-        margin-left: 0;
     }
 
     .blog {
@@ -261,25 +284,49 @@ span {
 
 /* ipad and ipad mini */
 @media only screen and (min-width: 688px) and (max-width:992px) {
+    .header{
+        width: 100%;
+        height: 100%;
+    }
+    nav{
+        flex-direction: column;
+    }
+    nav ul{
+        margin-top: -2px;
+    }
 
     .container,
     .latest-course {
         width: 100%;
         height: 100%;
-        margin-left: 0;
     }
 
-    .players {
+    .players, .courses {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .blogs{
         grid-template-columns: repeat(2, 1fr);
     }
-
+/* 
     .blogs,
     .courses {
         grid-template-columns: repeat(1, 1fr);
-    }
+    } */
 
     .courses {
         grid-gap: 20px;
     }
 
+}
+@media only screen and (min-width: 922px){
+    .header{
+        height: 100%;
+        width: 100%;
+    }
+    .players, .courses {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .blogs{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
