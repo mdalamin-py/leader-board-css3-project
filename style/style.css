@@ -192,6 +192,9 @@ hr {
     align-items: center;
 }
 
+.fa-star {
+    font-size: 12px;
+}
 .fa-star.called {
     color: #FFC014;
 }
@@ -225,6 +228,7 @@ hr {
 
 span {
     padding-left: 10px;
+    font-size: 15px;
 }
 
 
